@@ -1,0 +1,44 @@
+
+
+<html  xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<head>
+<title>Dodawarka zdjęć</title>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8" >
+	<link rel="stylesheet" type="text/css" th:href="@{/static/css/style.css}" >
+</head>
+
+<div id="container">
+
+    <div id="naglowek">
+    </div>
+    <div id="kolumnaLewa">
+		<div id="menuPoziome">
+			<ul class="ukladPoziomy">
+			<li>  <a th:href="@{login.html}">Zaloguj sie</a></li>
+			<li><a th:href="@{register.html}" >Zarejestruj sie</a></li>
+		</ul>
+        </div>
+    </div>
+    <div id="kolumnaPrawa">
+		<div id="tresc">
+			<h3>Logowanie</h3>
+			<form  method="post" th:action="@{/login}"  >
+				Nick: <input type="text" name="nick" id="nick" th:placeholder="nick" />
+				Hasło: <input type="password" id="password" name="password" th:placeholder="password" />
+				<div align="center" th:if="${param.error}">
+					<p style="font-size: 20; color: #FF1C19;">Email or Password invalid, please verify</p>
+				</div>
+					<input type="submit" value="Zaloguj" />
+			</form>
+		</div>    
+
+	</div>
+
+    <div id="stopka">
+		By @Paweł Lelental
+
+	</div>
+
+</div> 
+
+</html>
