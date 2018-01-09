@@ -26,7 +26,7 @@
 				Nick: <input type="text" name="nick" id="nick" th:placeholder="nick" />
 				Hasło: <input type="password" id="password" name="password" th:placeholder="password" />
 				<div align="center" th:if="${param.error}">
-					<p style="font-size: 20; color: #FF1C19;">Email or Password invalid, please verify</p>
+					<p style="font-size: 11; color: #FF1C19;">Nick lub podane hasło jest nieprawidłowe</p>
 				</div>
 					<input type="submit" value="Zaloguj" />
 			</form>
