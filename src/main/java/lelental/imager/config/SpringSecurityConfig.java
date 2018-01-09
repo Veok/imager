@@ -52,7 +52,7 @@ public class SpringSecurityConfig extends WebSecurityConfigurerAdapter {
                 .authenticated().and().csrf().disable()
                 .formLogin()
                 .loginPage("/login").failureUrl("/login?error=true")
-                .defaultSuccessUrl("/user/addPicture")
+                .defaultSuccessUrl("/user/add_picture")
                 .usernameParameter("nick")
                 .passwordParameter("password")
                 .and().logout()

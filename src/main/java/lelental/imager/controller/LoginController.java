@@ -57,13 +57,5 @@ public class LoginController {
         return modelAndView;
     }
 
-    @RequestMapping(value="/user/addPicture", method = RequestMethod.GET)
-    public ModelAndView home(){
-        ModelAndView modelAndView = new ModelAndView();
-        Authentication auth = SecurityContextHolder.getContext().getAuthentication();
-        User user = userService.findByNick(auth.getName());
-        modelAndView.addObject("userName", "Welcome " + user.getNick());
-        modelAndView.setViewName("/add_picture");
-        return modelAndView;
-    }
+
 }

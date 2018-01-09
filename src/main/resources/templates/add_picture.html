@@ -13,17 +13,15 @@
     <div id="kolumnaLewa">
         <div id="menuPoziome">
             <ul class="ukladPoziomy">
-                <li><a th:href="@{add_picture.html}"">Dodaj zdjęcia</a> </li>
-                <li><a th:href="@{picture_list.html}">Lista zdjęć</a> </li>
+                <li><a th:href="@{add_picture.html}">Dodaj zdjęcia</a> </li>
+                <li><a th:action="@{/user/pictures}" href="picture_list.html">Lista zdjęć</a> </li>
                 <li><a th:action="@{/logout}">Wyloguj się</a></li>
             </ul>
         </div>
 
     </div>
-
-
         <div>
-            <form action="/doUpload" method="post" enctype="multipart/form-data">
+            <form action="/user/doUpload" method="post" enctype="multipart/form-data">
                 <table width="100%">
                     <tr>
                         <td>Wybierz zdjęcia</td>
@@ -33,7 +31,7 @@
                         <td colspan="2" align="center">Wspierane rozszerzenia: .jpeg, .jpg, .png, .gif</td>
                     </tr>
                     <tr>
-                        <td colspan="2" align="center"><input type="submit" value="Dodaj zdjecia" id="selectedButton"/></td>
+                        <td colspan="2" align="center"><input type="submit" value="Dodaj zdjecie" id="selectedButton"/></td>
                     </tr>
                 </table>
             </form>
