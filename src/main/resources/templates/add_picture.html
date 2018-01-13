@@ -15,12 +15,12 @@
             <ul class="ukladPoziomy">
                 <li><a th:href="@{add_picture.html}">Dodaj zdjęcia</a> </li>
                 <li><a th:action="@{/user/pictures}" href="picture_list.html">Lista zdjęć</a> </li>
-                <li><a th:action="@{/logout}">Wyloguj się</a></li>
+                <li><a th:href="@{../login.html}" th:action="@{/logout}">Wyloguj się</a></li>
             </ul>
         </div>
 
     </div>
-        <div>
+        <div id="tresc">
             <form action="/user/doUpload" method="post" enctype="multipart/form-data">
                 <table width="100%">
                     <tr>
@@ -39,6 +39,7 @@
 
 
     <div id="stopka">
+        By @Paweł Lelental
     </div>
 
 </div>

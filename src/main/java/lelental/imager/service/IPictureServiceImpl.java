@@ -20,12 +20,12 @@ public class IPictureServiceImpl implements IPictureService {
     }
 
     @Override
-    public Picture deleteById(long id) {
-        return pictureRepository.deleteById(id);
+    public void deleteById(long id) {
+        pictureRepository.deleteById(id);
     }
 
     @Override
     public void savePicture(Picture picture) {
-         pictureRepository.save(picture);
+        pictureRepository.save(picture);
     }
 }

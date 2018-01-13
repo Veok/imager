@@ -10,5 +10,5 @@ import java.util.List;
 public interface IPictureRepository extends JpaRepository<Picture,Long>{
 
     List<Picture> findByUserId(long userId);
-    Picture deleteById(long id);
+    void deleteById(long id);
 }

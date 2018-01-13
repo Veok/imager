@@ -6,9 +6,9 @@ import java.util.List;
 
 public interface IPictureService {
 
-    public List<Picture> findByUserId(long userId);
+    List<Picture> findByUserId(long userId);
 
-    public Picture deleteById(long id);
+    void deleteById(long id);
 
-    public void savePicture(Picture picture);
+    void savePicture(Picture picture);
 }

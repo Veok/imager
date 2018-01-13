@@ -4,13 +4,13 @@ import lelental.imager.model.User;
 
 public interface IUserService {
 
-    public User findByNick(String nick);
+    User findByNick(String nick);
 
-    public User findByEmail(String email);
+    User findByEmail(String email);
 
-    public User findById(long id);
+    User findById(long id);
 
-    public void saveUser(User user);
+    void saveUser(User user);
 
-    public User findByNickAndPassword(String nick, String password);
+    User findByNickAndPassword(String nick, String password);
 }

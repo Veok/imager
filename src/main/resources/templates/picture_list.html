@@ -3,6 +3,8 @@
     <title>Dodawarka zdjęć</title>
     <meta http-equiv="content-type" content="text/html; charset=UTF-8"/>
     <link rel="stylesheet" type="text/css" th:href="@{/static/css/style.css}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
 </head>
 <div id="container">
 
@@ -13,27 +15,27 @@
         <ul class="ukladPoziomy">
             <li><a th:href="@{add_picture.html}">Dodaj zdjęcia</a></li>
             <li><a th:href="@{picture_list.html}">Lista zdjęć</a></li>
-            <li><a th:action="@{/logout}">Wyloguj się</a></li>
+            <li><a th:href="@{../login.html}" th:action="@{/logout}">Wyloguj się</a></li>
         </ul>
     </div>
 
 
     <div id="tresc">
-        <form id="deleteform" method="post"
-              onsubmit="if(!confirm(\'Jesteś pewien że chcesz usunąć ten obraz?\')){return false;}"
-              action="/deletePicture">'
-            <table>
-                <td th:each="pictures : *{pics}">
-                    <img th:src="*{'data:image/jpeg;base64,'+ pictures }" alt="" />
-                </td>
-                <td>
-                    <input type="hidden" name="id" value="' . $id . '"/>
-                    <button class="fa fa-close" type="submit" class="button" name="delete"
-                            style="display: inline-block; height: 146px; border-color: black; background-color: #f44336;"/>
-                    </button>
-                </td>
-            </table>
-        </form>
+
+        <table>
+            <td th:each="pictures : *{pics}"
+                onsubmit="if(!confirm('Jesteś pewien że chcesz usunąć ten obraz?')){return false;}"
+                style="height: 145px;">
+                <img th:src="*{'data:image/jpeg;base64,'+ pictures.encoded }" alt=""
+                     style="width: 200px;height: 145px; display: inline"/>
+                <div>
+                <form th:action="@{/user/deletePicture/{id}(id=${pictures.id})}">
+                    <button class="fa fa-close" type="submit"
+                            style="display: inline-block; height: 29px; width: 200px; border-color: black; background-color: #f44336;"></button>
+                </form>
+                </div>
+            </td>
+        </table>
 
 
         </br>

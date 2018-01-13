@@ -27,11 +27,17 @@
     <div id="tresc">
 
         <h3>Rejestracja</h3>
-        <form name="registerform" method="post" autocomplete="off" action="#" th:action="@{/register}"
+        <form name="registerform" method="post" autocomplete="off" action="#" th:action="@{/register.html}"
               th:object="${user}" role="form">
-            Nick: <input name="nick"  th:field="*{nick}" minlength="3" maxlength="15" required="true"/>
-            Hasło: <input type="password" name="password" th:field="*{password}" required="true" minlength="8"/>
-            Email <input type="email" name="email" th:field="*{email}" required="true"/>
+            Nick: <label>
+            <input name="nick" th:field="*{nick}" minlength="3" maxlength="15" required="true"/>
+        </label>
+            Hasło: <label>
+            <input type="password" name="password" th:field="*{password}" required="true" minlength="8"/>
+        </label>
+            Email <label>
+            <input type="email" name="email" th:field="*{email}" required="true"/>
+        </label>
 
             <input type="submit" value="Zarejestruj"/>
         </form>

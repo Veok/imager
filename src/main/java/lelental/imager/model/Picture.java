@@ -1,6 +1,7 @@
 package lelental.imager.model;
 
 import lombok.Data;
+import org.springframework.stereotype.Controller;
 
 import javax.persistence.*;
 import java.util.Date;
@@ -20,6 +21,8 @@ public class Picture {
     private Date addedDate;
     @Column(name = "Image_Data")
     private byte[] pictureData;
+    @Column
+    private String encoded;
     @ManyToOne
     private User user;
 

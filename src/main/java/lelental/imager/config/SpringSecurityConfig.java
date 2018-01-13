@@ -10,7 +10,9 @@ import org.springframework.security.config.annotation.web.configuration.EnableWe
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.web.access.AccessDeniedHandler;
+
 import javax.sql.DataSource;
+
 import org.springframework.security.web.util.matcher.AntPathRequestMatcher;
 
 
@@ -47,11 +49,12 @@ public class SpringSecurityConfig extends WebSecurityConfigurerAdapter {
                 authorizeRequests()
                 .antMatchers("/").permitAll()
                 .antMatchers("/login").permitAll()
+                .antMatchers("/register.html").permitAll()
                 .antMatchers("/register").permitAll()
                 .antMatchers("/user/**").hasAuthority("ADMIN").anyRequest()
                 .authenticated().and().csrf().disable()
                 .formLogin()
-                .loginPage("/login").failureUrl("/login?error=true")
+                .loginPage("/login").failureUrl("/login")
                 .defaultSuccessUrl("/user/add_picture")
                 .usernameParameter("nick")
                 .passwordParameter("password")
