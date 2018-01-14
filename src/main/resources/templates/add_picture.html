@@ -1,47 +1,46 @@
-
-<html  xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
 <head>
     <title>Dodawarka zdjęć</title>
-    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
-    <link rel="stylesheet" type="text/css" th:href="@{/static/css/style.css}" >
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8"/>
+    <link rel="stylesheet" type="text/css" th:href="@{/static/css/style.css}">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.3/css/bootstrap.min.css"
+          integrity="sha384-Zug+QiDoJOrZ5t4lssLdxGhVrurbmBWopoEl+M6BdEfwnCJZtKxi1KgxUyJq13dy" crossorigin="anonymous">
+
 </head>
-<div id="strona">
-
-    <div id="naglowek">
+<div id="container">
+    <div id="naglowek"></div>
+    <div id="menuPoziome">
+        <ul class="ukladPoziomy">
+            <li><a th:href="@{add_picture.html}">Dodaj zdjecia</a></li>
+            <li><a th:action="@{/user/pictures}" href="picture_list.html">Lista zdjec</a></li>
+            <li><a th:href="@{../login.html}" th:action="@{/logout}">Wyloguj sie</a></li>
+        </ul>
     </div>
 
-    <div id="kolumnaLewa">
-        <div id="menuPoziome">
-            <ul class="ukladPoziomy">
-                <li><a th:href="@{add_picture.html}">Dodaj zdjęcia</a> </li>
-                <li><a th:action="@{/user/pictures}" href="picture_list.html">Lista zdjęć</a> </li>
-                <li><a th:href="@{../login.html}" th:action="@{/logout}">Wyloguj się</a></li>
-            </ul>
-        </div>
+    <div id="tresc">
+        <form action="/user/doUpload" method="post" enctype="multipart/form-data">
 
+            <table width="100%">
+                <tr>
+                    <td>Wybierz zdjęcia</td>
+                    <td><input type="file" name="fileUpload"/></td>
+                </tr>
+                <tr>
+                    <td colspan="2" align="center">Wspierane rozszerzenia: .jpeg, .jpg, .png, .gif</td>
+                </tr>
+                <tr>
+                    <td colspan="2" align="center"><input type="submit" class="btn btn-primary" value="Dodaj zdjecie"
+                                                          id="selectedButton"/></td>
+                </tr>
+            </table>
+
+        </form>
     </div>
-        <div id="tresc">
-            <form action="/user/doUpload" method="post" enctype="multipart/form-data">
-                <table width="100%">
-                    <tr>
-                        <td>Wybierz zdjęcia</td>
-                        <td><input type="file" name="fileUpload"/></td>
-                    </tr>
-                    <tr>
-                        <td colspan="2" align="center">Wspierane rozszerzenia: .jpeg, .jpg, .png, .gif</td>
-                    </tr>
-                    <tr>
-                        <td colspan="2" align="center"><input type="submit" value="Dodaj zdjecie" id="selectedButton"/></td>
-                    </tr>
-                </table>
-            </form>
-        </div>
 
 
     <div id="stopka">
         By @Paweł Lelental
     </div>
-
 </div>
 
 

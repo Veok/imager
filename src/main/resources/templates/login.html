@@ -3,6 +3,8 @@
 <title>Dodawarka zdjęć</title>
 <meta http-equiv="content-type" content="text/html; charset=UTF-8" >
 	<link rel="stylesheet" type="text/css" th:href="@{/static/css/style.css}" >
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.3/css/bootstrap.min.css" integrity="sha384-Zug+QiDoJOrZ5t4lssLdxGhVrurbmBWopoEl+M6BdEfwnCJZtKxi1KgxUyJq13dy" crossorigin="anonymous">
+
 </head>
 
 <div id="container">
@@ -11,22 +13,29 @@
     </div>
     <div id="kolumnaLewa">
 		<div id="menuPoziome">
+			<div class="navbar-nav">
 			<ul class="ukladPoziomy">
-			<li>  <a th:href="@{login.html}">Zaloguj sie</a></li>
-			<li><a th:href="@{register.html}" >Zarejestruj sie</a></li>
+			<li>  <a class="nav-item nav-link active" th:href="@{login.html}">Zaloguj sie</a></li>
+			<li><a class="nav-item nav-link active" th:href="@{register.html}" >Zarejestruj sie</a></li>
 		</ul>
+		</div>
         </div>
     </div>
     <div id="kolumnaPrawa">
 		<div id="tresc">
 			<h3>Logowanie</h3>
 			<form  method="post" th:action="@{/login}"  >
-				Nick: <input type="text" name="nick" id="nick" th:placeholder="nick" />
-				Hasło: <input type="password" id="password" name="password" th:placeholder="password" />
+				<div class="form-group">
+
+				Nick: <input type="text" name="nick"  class="form-control" id="nick" th:placeholder="nick" />
+				Hasło: <input type="password" class="form-control" id="password" name="password" th:placeholder="password" />
 				<div align="center" th:if="${param.error}">
 					<p style="font-size: 11; color: #FF1C19;">Nick lub podane hasło jest nieprawidłowe</p>
 				</div>
-					<input type="submit" value="Zaloguj" />
+					<div></div>
+					<br/>
+					<input type="submit" class="btn btn-primary" value="Zaloguj" />
+				</div>
 			</form>
 		</div>    
 
